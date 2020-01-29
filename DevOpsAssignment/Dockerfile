@@ -2,6 +2,8 @@
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
 
-WORKDIR DevOpsAssignment/app
-COPY --from=publish DevOpsAssignment/app/publish .
+WORKDIR /app
+COPY DevOpsAssignment/app/publish .
 ENTRYPOINT ["dotnet", "DevOpsAssignment.dll"]
+EXPOSE 80
+EXPOSE 443
